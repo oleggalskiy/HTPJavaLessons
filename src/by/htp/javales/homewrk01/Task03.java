@@ -29,18 +29,22 @@ public class Task03 {
 			System.out.println("a+b+c=" + rezabc + " Новый год!");
 		}
 	}
-
 	public static double readFromConsole(String message) {
 
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		double x = 0;
+		double d = 0;
 		System.out.println(message);
 		while (!sc.hasNextDouble()) {
 			sc.next();
-			System.out.print("Введите валидное значение!" + message);
+			System.out.println(message);
 		}
-		x = sc.nextDouble();
-		return x;
+		d = sc.nextDouble();
+		while (d <= 0) {
+			System.out.println("Введите значение больше или не равное нулю!" + message);
+			d = sc.nextDouble();
+		}
+		System.out.println("Значение принято.");
+		return d;
 	}
 }

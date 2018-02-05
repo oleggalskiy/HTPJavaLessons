@@ -1,6 +1,6 @@
 package by.htp.javales.homewrk01;
-
 import java.util.Scanner;
+
 
 public class Task02 {
 
@@ -21,14 +21,19 @@ public class Task02 {
 
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		double x = 0;
+		double d = 0;
 		System.out.println(message);
 		while (!sc.hasNextDouble()) {
 			sc.next();
-			System.out.print("¬ведите валидное значение!" + message);
+			System.out.println(message);
 		}
-		x = sc.nextDouble();
-		return x;
+		d = sc.nextDouble();
+		while (d <= 0) {
+			System.out.println("¬ведите значение больше или не равное нулю!" + message);
+			d = sc.nextDouble();
+		}
+		System.out.println("«начение прин€то.");
+		return d;
 	}
 
 }
